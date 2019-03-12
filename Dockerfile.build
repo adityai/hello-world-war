@@ -1,7 +1,16 @@
+# Using a maven image
 FROM maven
+
 MAINTAINER Aditya Inapurapu adityaii@gmail.com
+
+# Create the directory where the app can be built
 RUN mkdir -p /usr/src/app
+
 EXPOSE 9080
+
+# Set working directory
 WORKDIR /usr/src/app
+
+# Add source code from local path to image
 ADD . /usr/src/app
 RUN mvn install 

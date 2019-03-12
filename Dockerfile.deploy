@@ -1,7 +1,11 @@
+# Using a pre-built open-liberty container
 FROM open-liberty:webProfile8
+
 MAINTAINER Aditya Inapurapu adityaii@gmail.com
 
-
 EXPOSE 9080
+
+# Add the war file to the dropins folder
 ADD ./target/*.war /config/dropins/
 
+# Run command is not required because image is already accounting for it
